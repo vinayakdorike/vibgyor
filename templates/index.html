@@ -1,0 +1,199 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Add a Tree
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+  $("#Add").click(function(){
+	$("#AddModal").modal();
+  });
+  $("#About").click(function(){
+	$("#AboutModal").modal();
+  });
+  });
+  </script>
+  <style>
+  div.d {
+  text-align: justify;
+  }
+  </style>
+
+
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark ">
+	<ul class="navbar-nav nav-fill w-100">
+	<li class="nav-item active">
+	<a class="nav-link" href="/">Home</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" id = "Add" href="/add">Add</a>
+	
+	
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="#">View All</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="#">Admin</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" id="About" href="#">About Us</a>
+	</li>
+	</ul>
+	</nav>
+
+
+
+	
+	
+	
+	
+	<!---- Contact us ------>
+	
+	<div class="container mt-3">
+	
+	<!-- The Modal -->
+	<div class="modal fade" id="ContactModal">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	
+	  <!-- Modal Header -->
+	  <div class="modal-header">
+		<h4 class="modal-title">Contact Us</h4>
+		<button type="button" class="close" data-dismiss="modal">×</button>
+	  </div>
+	  
+	  <!-- Modal body -->
+	 <div class="modal-body">
+	
+	  </div>
+	  
+	  <!-- Modal footer -->
+
+	</div>
+	</div>
+	</div>
+	</div>
+	
+	
+	<!---- About Us -------------->
+	<div class="container mt-3">
+	
+	<!-- The Modal -->
+	<div class="modal fade" id="AboutModal">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	
+	  <!-- Modal Header -->
+	  <div class="modal-header">
+		<h4 class="modal-title">About Us</h4>
+		<button type="button" class="close" data-dismiss="modal">×</button>
+	  </div>
+	  
+	  <!-- Modal body -->
+	 <div class="modal-body">
+	<form>
+	  <div class="d">
+		<p>"The true meaning of life is to plant trees, under whose shade you do not expect to sit."</p>
+	
+	<p>There is a strong connection between tree ecosystems and the climate system. However, the feedback between the two relies on a range of factors, such as species composition, abiotic disturbances and biotic interactions, as well as climate regimes experienced in the past and occurring in the present.
+	</p>
+	<p>Did you know that hospital patients with rooms overlooking trees recover faster than those without the same view? It’s impossible to ignore that feeling of elation you get while walking through a calm, quiet forest. Trees help reduce stress and anxiety and allow us to reconnect with nature. In addition, shade provided by tree coverage helps protect our skin from the ever-increasing harshness of the sun. 
+	</p>
+	<p>Trees greatly contribute to their environment by providing oxygen, supporting wildlife, improving air quality, conserving water, preserving soil, and climate amelioration. By only performing its primary function of photosynthesis, it contributes more than it takes.
+	</p>
+	<p>Our goal is to locate any trees around your neighborhood on geolocation. Through the web portal anyone can check the status of the tree nearby also they can check the health of the tree. One can register himself/herself on web browser while planting any plant from anywhere and can enroll the location as well for particular tree.
+	</p>
+	  </input>
+	  </div>
+	</form>
+	  </div>
+	  
+
+	</div>
+	</div>
+	</div>
+	</div>
+	
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+      <h1 class="pt-5 pb-2">Welcome to the Tree Geolcation Finder!</h1>
+
+      <p class="lead">Our Goal is to map every tree with Geolocation in your neighborhood.</p>
+	  <div class="controls">
+		
+	  </div>
+	
+	  {{ wtf.quick_form(form) }}
+	  <body onload=getLocation()></body>
+	  <script>
+
+		function getLocation() {
+			
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+			
+		} else { 
+			
+		}
+		}
+
+		function showPosition(position) {
+		document.getElementById('lat').value = position.coords.latitude;
+		document.getElementById('lng').value = position.coords.longitude;
+		document.getElementById('date').value = new Date().toISOString().slice(0, 10);
+		
+		
+		}
+	  </script>
+
+      <p class="pt-5"><strong>{{ message }}</strong></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!--
+	TIPS about using Flask-Bootstrap:
+	Flask-Bootstrap keeps the default Bootstrap stylesheet in the
+	env/lib/python3.8/site-packages/flask_bootstrap/static/css/ directory.
+	You can replace the CSS file. HOWEVER, when you reinstall requirements
+	for your project, you would overwrite all the Bootstrap files
+	with the defaults.
+	Flask-Bootstrap templates are in
+	env/lib/python3.8/site-packages/flask_bootstrap/static/templates
+	Modifying the Bootstrap base.html template: use directives and
+	Jinja2's super() function. See Jinja2 documentation and also this:
+	https://pythonhosted.org/Flask-Bootstrap/basic-usage.html
+-->

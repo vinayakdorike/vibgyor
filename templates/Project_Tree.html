@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+<script type="text/javascript">
+        $(document).ready(function(){
+			$("#Add").click(function(){
+				$("#AddModal").modal();
+			});
+			$("#Contact").click(function(){
+				$("#ContactModal").modal();
+			});
+			$("#About").click(function(){
+				$("#AboutModal").modal();
+			});
+		});
+    </script>
+<style>
+div.d {
+  text-align: justify;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark ">
+  <ul class="navbar-nav nav-fill w-100">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id = "Add" href="#">Add</a>
+	  
+	 
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">View All</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" href="#">Admin</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" id = "Contact" href="#">Contact Us</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" id="About" href="#">About Us</a>
+    </li>
+  </ul>
+</nav>
+
+<!--- Add New Item ---->
+<div class="container mt-3">
+ 
+  <!-- The Modal -->
+  <div class="modal fade" id="AddModal" style="margin-top:30px;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add New Tree</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+       <div class="modal-body">
+			<form>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Tree Name</label>
+					<input class = "form-control" type = "text" >
+				</input>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Species</label>
+					<input class = "form-control" type = "text">
+				</input>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Height</label>
+					<input class = "form-control" type = "text">
+				</input>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Health</label>
+					<input class = "form-control" type = "text">
+				</input>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Location</label>
+					<input class = "form-control" type = "Location">
+				</input>
+				</div>
+			</form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+		  <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!---- Contact us ------>
+
+<div class="container mt-3">
+ 
+  <!-- The Modal -->
+  <div class="modal fade" id="ContactModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Contact Us</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+       <div class="modal-body">
+			<form>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Your Name</label>
+					<input class = "form-control" type = "text" >
+				</input>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Your Email</label>
+					<input class = "form-control" type = "text">
+				</input>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Subject</label>
+					<input class = "form-control" type = "text">
+				</input>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Your Message</label>
+					<textarea class="form-control" id="LongDes" rows="3"></textarea>
+				</div>
+			</form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+		  <button type="button" class="btn btn-success" data-dismiss="modal">Send</button>
+		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---- About Us -------------->
+<div class="container mt-3">
+ 
+  <!-- The Modal -->
+  <div class="modal fade" id="AboutModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">About Us</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+       <div class="modal-body">
+			<form>
+				<div class="d">
+					<p>"The true meaning of life is to plant trees, under whose shade you do not expect to sit."</p>
+
+<p>There is a strong connection between tree ecosystems and the climate system. However, the feedback between the two relies on a range of factors, such as species composition, abiotic disturbances and biotic interactions, as well as climate regimes experienced in the past and occurring in the present.
+</p>
+<p>Did you know that hospital patients with rooms overlooking trees recover faster than those without the same view? It’s impossible to ignore that feeling of elation you get while walking through a calm, quiet forest. Trees help reduce stress and anxiety and allow us to reconnect with nature. In addition, shade provided by tree coverage helps protect our skin from the ever-increasing harshness of the sun. 
+</p>
+<p>Trees greatly contribute to their environment by providing oxygen, supporting wildlife, improving air quality, conserving water, preserving soil, and climate amelioration. By only performing its primary function of photosynthesis, it contributes more than it takes.
+</p>
+<p>Our goal is to locate any trees around your neighborhood on geolocation. Through the web portal anyone can check the status of the tree nearby also they can check the health of the tree. One can register himself/herself on web browser while planting any plant from anywhere and can enroll the location as well for particular tree.
+</p>
+				</input>
+				</div>
+			</form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+		  <button type="button" class="btn btn-success" data-dismiss="modal">Send</button>
+		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="map" style="width: 900px; height: 900px;"></div>
+<script type="text/javascript">
+  var locations = JSON.parse('{{ location|safe }}');
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: new google.maps.LatLng(19.0759837, 72.8776559),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+  var infowindow = new google.maps.InfoWindow();
+  var marker, i;
+  for (i = 0; i < locations.length; i++) {
+    var contentString = '<div id="content">' +
+    '<div id="bodyContent">' +
+    '<p><center><b>Species</b>:'+locations[i][0]+'</center>' +
+    '<p><center><b>Health</b>:'+locations[i][3]+'</center> </p>' +
+    '<p><center><b>Height</b>:'+locations[i][4]+'</center>' +
+    '<p><center><b>Date</b>:'+locations[i][5]+'</center>' +
+    '<p><center><b>Name</b>:'+locations[i][6]+'</center>' +
+    '</div>' +
+    '</div>';
+    var iconBase = 'http://maps.google.com/mapfiles/kml/pal2/';
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      icon: iconBase + 'icon12.png',
+      map: map
+    });
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+        infowindow.setContent(contentString);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+  }
+</script>
+
+</body>
+</html>
